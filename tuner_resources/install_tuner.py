@@ -19,7 +19,6 @@ if check_installs:
 
 # --- Move this script's enclosing folder (containing the main scripts) into a specified directory --- #
 this_dir, root_dir = os.path.realpath(__file__), os.getenv('HOME')
-rmtree('main.zip'); rmtree('__MACOSX')
 enclosing_folder = this_dir[:this_dir.rfind('/')]
 final_dir = f'{root_dir}/bin'
 
@@ -44,4 +43,4 @@ with open(f'{root_dir}/.zprofile','w') as writer:
 # --- Make the main file an executable, and move it to the bin folder --- #
 run(['chmod','+x',],capture_output=True)
 run(['mv',f'{root_dir}/bin/tuner_resources/tuner.py',f'{root_dir}/bin/tuner'],capture_output=True)
-print(enclosing_folder_clean[:enclosing_folder_clean.rfind('/')])
+rmtree(f'{root_dir}/main.zip'); rmtree(f'{root_dir}/bin/Tuner-main')
