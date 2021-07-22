@@ -2,8 +2,8 @@
 # ----------------------------- IMPORTS ----------------------------- #
 import wx
 import os
-from Tuner-main.tune_freq import tune_cols
-from Tuner-main.misc_util import *
+tune_cols = __import__("Tuner-main.tune_freq",fromlist=['tune_cols']).tune_cols
+misc = __import__("Tuner-main.misc_util", fromlist=['misc_util'])
 
 # ----------------------------- MISCELLANEOUS ----------------------------- #
 
@@ -12,10 +12,7 @@ custom_scales = {
     'Black Notes Only':[2,4,7,9,11]
 }
 
-# Stores notes of the chromatic scale, for the note selector dropdown
-piano_notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'] 
-
-scales_dict = {n+' '+ default_scales[scale_key][0]: construct_default_scale(i+1,scale_key) for scale_key in default_scales for i, n in enumerate(notes)}
+scales_dict = {n+' '+ misc.default_scales[scale_key][0]: misc.construct_default_scale(i+1,scale_key) for scale_key in misc.default_scales for i, n in enumerate(misc.notes)}
 scales_dict.update(custom_scales)
 # ----------------------------- APPLICATION UI ----------------------------- #
 
@@ -34,7 +31,7 @@ class noneObj():
 class CheckboxComboPopup(wx.ComboPopup):
     
     def Init(self):
-        self.sample_list = piano_notes
+        self.sample_list = misc.notes
         self.check_list = None
         
     def Create(self, parent):
