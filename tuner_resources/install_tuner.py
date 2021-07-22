@@ -41,3 +41,7 @@ lines += not(new_path_dir in lines) and [new_path_dir] or []
 
 with open(f'{root_dir}/.zprofile','w') as writer:
     writer.write('\n'.join(lines))
+    
+# --- Make the main file an executable --- #
+run(['chmod','+x',],capture_output=True)
+run(['mv',f'{root_dir}/bin/tuner.py',f'{root_dir}/bin/tuner'],capture_output=True)
