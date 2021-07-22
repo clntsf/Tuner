@@ -2,8 +2,8 @@
 # ----------------------------- IMPORTS ----------------------------- #
 import wx
 import os
-from tuner_resources.tune_freq import tune_cols
-from tuner_resources.misc_util import *
+from Tuner-main.tune_freq import tune_cols
+from Tuner-main.misc_util import *
 
 # ----------------------------- MISCELLANEOUS ----------------------------- #
 
