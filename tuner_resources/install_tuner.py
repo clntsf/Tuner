@@ -1,8 +1,9 @@
 from misc_util import sanitize_filepath
 import os; from shutil import rmtree
 from subprocess import run
+"""Hello"""
 
-check_installs = False
+check_installs = True
 # --- Makes sure the user has the latest version of pip installed --- #
 if check_installs:
     try: run(['pip', 'install', 'pip', '-U'], capture_output=False)
