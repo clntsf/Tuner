@@ -43,6 +43,6 @@ with open(f'{root_dir}/.zprofile','w') as writer:
 
 # --- Make the main file an executable, and move it to the bin folder --- #
 rmtree(f'{root_dir}/bin/tuner_resources'); fp=f'{root_dir}/bin/tuner_resources/tuner.py'
-run(['mv',f'{root_dir}/bin/Tuner-main/tuner_resources',f'{root_dir}/bin'],capture_output=True)
-run(['chmod','+x',fp,'&&','mv',fp,f'{root_dir}/bin/tuner'],capture_output=True)
+run(['mv',f'{root_dir}/bin/Tuner-main/tuner_resources',f'{root_dir}/bin'],capture_output=False)
+run(['chmod','+x',fp,'&&','mv',fp,f'{root_dir}/bin/tuner'],capture_output=False)
 os.remove(f'{root_dir}/main.zip'); rmtree(f'{root_dir}/bin/Tuner-main')
