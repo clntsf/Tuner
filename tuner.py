@@ -7,7 +7,7 @@ from math import ceil, floor, log
 import tkinter as tk
 from tkinter import filedialog
 
-version='1.0.0'
+version='0.1.0'
 
 # ----------------------------- MISCELLANEOUS ----------------------------- #
 scalesDict = {
