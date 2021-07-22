@@ -44,3 +44,4 @@ with open(f'{root_dir}/.zprofile','w') as writer:
 # --- Make the main file an executable, and move it to the bin folder --- #
 run(['chmod','+x',],capture_output=True)
 run(['mv',f'{root_dir}/bin/tuner_resources/tuner.py',f'{root_dir}/bin/tuner'],capture_output=True)
+print(enclosing_folder_clean[:enclosing_folder_clean.rfind('/')])
